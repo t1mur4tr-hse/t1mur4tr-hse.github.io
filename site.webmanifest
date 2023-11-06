@@ -1,0 +1,12 @@
+{
+  "short_name": "cm",
+  "name": "cool monkeys",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }],
+  "start_url": "/",
+  "background_color": "#fafafa",
+  "theme_color": "#fafafa"
+}
