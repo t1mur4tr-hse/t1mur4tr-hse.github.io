@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Решение алгоритмической задачи</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<h1>Решение алгоритмической задачи</h1>
+<p>Мой номер: 164. Номер задачи: 1011.</p>
+<p>Определить значение функции Z = 1/(XY) при произвольных X и Y:</p>
+<p>Введите X: <label>
+  <input id="X" type="number" step="0.01" value="0">
+</label></p>
+<p>Введите Y: <label>
+  <input id="Y" type="number" step="0.01" value="0">
+</label></p>
+<p><button id="button">Посчитать</button></p>
+<p id="Z">Z = ?</p>
+</body>
+<script>
+  document.getElementById("button").addEventListener("click", () => {
+    let X = parseFloat(document.getElementById("X").value)
+    let Y = parseFloat(document.getElementById("Y").value)
+    document.getElementById("Z").innerText = "Z = " + 1/(X*Y)
+  })
+</script>
+</html>
