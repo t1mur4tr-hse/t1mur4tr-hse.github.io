@@ -180,9 +180,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -278,6 +278,15 @@ textarea {
   font-size: 17px;
 }
 
+.navigation a:visited {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 .navigation a:hover {
   background-color: #ddd;
   color: black;
@@ -295,7 +304,7 @@ textarea {
   z-index: 99;
 }
 
-.minorNav a{
+.minorNav a {
   border: none;
   outline: none;
   background-color: #888;
@@ -304,9 +313,89 @@ textarea {
   padding: 15px;
   border-radius: 10px;
   font-size: 18px;
+  text-decoration: none;
+}
+
+.minorNav a:visited {
+  border: none;
+  outline: none;
+  background-color: #888;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  text-decoration: none;
 }
 
 .minorNav a:hover {
-  background-color: #555;
+  background-color: #f2f2f2;
+  color: #04AA6D;
+  text-decoration: none;
 }
 
+img {
+  padding: 1%;
+  border: 2px solid #04AA6D;
+  max-width: 96%;
+  max-height: 96vh;
+  margin: auto;
+}
+
+body {
+  background-color: #555555;
+}
+
+h1 {
+  background-color: #04AA6D;
+  color: #f2f2f2;
+  border: 2px solid #f2f2f2;
+}
+
+h2 {
+  background-color: #333333;
+  color: #f2f2f2;
+  border: 1px solid #04AA6D;
+}
+
+h3 {
+  background-color: #444444;
+  color: #f2f2f2;
+  border: 1px solid #04AA6D;
+}
+
+p {
+  color: #f2f2f2;
+}
+
+li {
+  color: #f2f2f2;
+}
+
+a:link {
+  color: #f2f2f2;
+}
+
+a:visited {
+  color: #bbbbbb;
+}
+
+a:hover {
+  color: #04AA6D;
+}
+
+figcaption {
+  color: #f2f2f2;
+}
+
+input[type=reset], input[type=submit], input[type=button] {
+  background-color: #333333;
+  color: #04AA6D;
+  border-radius: 50px;
+}
+
+input[type=text], input[type=tel], input[type=email], input[type=datetime-local], input[type=number], input[type=password] {
+  background-color: #444444;
+  color: #f2f2f2;
+  border: 1px solid #04AA6D;
+}

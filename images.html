@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Картинки</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+    input[type=number] {
+      width: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="navigation">
+  <a href="/index.html"> <i class="fa fa-home"> </i></a>
+  <a href="/index.html#why"> Зачем </a>
+  <a href="/tamarin.html"> Императорский тамарин </a>
+  <a href="/capucin.html"> Обыкновенный капуцин </a>
+  <a href="/nose.html"> Носач </a>
+  <a href="/gamer.html"> Карликовая игрунка </a>
+  <a href="/koala.html"> Коата Жоффруа </a>
+  <a href="#top" class="active"> Картинки </a>
+  <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D0%BC%D0%B0%D1%82%D1%8B" target="_blank"> Википедия:
+    Приматы </a>
+</div>
+
+
+<h1 id="home"> Картинки крутых обезьян </h1>
+<div>
+  <h3> Запросить <label>
+    <input type="number" id="monkey_count" value="10" min="1" max="99">
+  </label> картинок: <input type="button" id="monkey_button" value="Запросить."></h3>
+</div>
+<div id="monkey_container">
+
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  document.getElementById("monkey_button").addEventListener("click", () => {
+    const monkey_count = parseInt(document.getElementById("monkey_count").value)
+    let monkey_container = document.getElementById("monkey_container")
+    monkey_container.innerHTML = ""
+
+    function shuffle(array) {
+      let currentIndex = array.length, randomIndex;
+
+      while (currentIndex > 0) {
+
+        randomIndex = Math.floor(Math.random() * currentIndex)
+        currentIndex--
+
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]
+      }
+    }
+
+    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+      {
+        tags: "monkey, monkeys",
+        text: "monkey",
+        format: "json",
+        per_page: "100",
+        sort: "relevance",
+        safe_search: "1"
+      }, function (data) {
+        let items = data.items
+        let len = items.length
+        shuffle(items)
+        for (let i = 0; i < Math.min(monkey_count, len); ++i) {
+          monkey_container.innerHTML += `
+          <img src=${items[i]['media']['m'].replace("_m", "_b")} alt = "monkey">
+          `
+        }
+      })
+  })
+</script>
+</html>
+
